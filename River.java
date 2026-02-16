@@ -35,12 +35,12 @@ public class River {
 			if(target < 0 || target >= river.length){ 
 				continue;
 			}
-		//move animal to empty cell
+		//Move animal to empty cell
 			if(river[target] == null) {
 				river[target] = current;
 				river[i] = null;
 			}
-		//Species are different		
+		//Animal interaction occuring	
 			else {
 				Animal other = river[target];
 				
@@ -83,4 +83,5 @@ public class River {
 		System.out.println();
 	}
 }	
+
 
