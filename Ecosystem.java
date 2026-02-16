@@ -4,7 +4,13 @@ public class Ecosystem{
 
 	    public static void main(String[] args) {
 	        River river = new River(20);
-	       	        
+
+			//check if fish create new fish
+			//river.addAnimal(new Fish(), 3);
+	       	//river.addAnimal(new Fish(), 4);
+			//river.addAnimal(new Fish(), 5);
+			//river.addAnimal(new Fish(), 6);
+			
 	        //check if bear eats fish and bears create new bear
 	        river.addAnimal(new Bear(), 3);
 	        river.addAnimal(new Bear(), 19);
@@ -34,4 +40,5 @@ public class Ecosystem{
 
 
 	
+
 
