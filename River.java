@@ -20,26 +20,27 @@ public class River {
 		}
 	}
 	
-	//Move the animals in the river ecosystem
+	//Simulate the movement of animals in the array
 	public void moveAnimal() {
 		for(int i = river.length-1; i >= 0; i--) {
 			
-		//Check to ensure index is empty
+		//Ensure array index is empty
 			if(river[i] == null) {
 				continue;
 			}
-		//move the animal at current index
 			Animal current = river[i];
 			int direction = rd.nextBoolean() ? -1:1; //determines randomly if it moves left (-1) or right (1)
 			int target = i + direction;
-			
+		//Ensure the movement is within the array bounds
 			if(target < 0 || target >= river.length){ 
 				continue;
 			}
+		//move animal to empty cell
 			if(river[target] == null) {
 				river[target] = current;
 				river[i] = null;
 			}
+		//Species are different		
 			else {
 				Animal other = river[target];
 				
@@ -82,3 +83,4 @@ public class River {
 		System.out.println();
 	}
 }	
+
