@@ -11,13 +11,13 @@ public class River {
 		river = new Animal[size];		
 		rd = new Random();
 	}
-	//add an animal to the river
+	
+	//Add an animal to the river
 	public void addAnimal(Animal animal, int position) {
 		//ensure position is not filled
 		if(position >= 0 && position < river.length) {
 			river[position] = animal;
 		}
-	
 	}
 	
 	//Move the animals in the river ecosystem
@@ -28,13 +28,14 @@ public class River {
 			if(river[i] == null) {
 				continue;
 			}
-			
+		//move the animal at current index
 			Animal current = river[i];
-			int direction = rd.nextBoolean() ? -1:1;
+			int direction = rd.nextBoolean() ? -1:1; //determines randomly if it moves left (-1) or right (1)
 			int target = i + direction;
 			
-			if(target < 0 || target >= river.length) continue;
-			
+			if(target < 0 || target >= river.length){ 
+				continue;
+			}
 			if(river[target] == null) {
 				river[target] = current;
 				river[i] = null;
@@ -81,4 +82,3 @@ public class River {
 		System.out.println();
 	}
 }	
-
